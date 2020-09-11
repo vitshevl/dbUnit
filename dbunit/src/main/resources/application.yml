@@ -1,0 +1,30 @@
+#Data sources
+employee:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employee
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    dialect: org.hibernate.dialect.PostgreSQL95Dialect
+    ddl-auto: none
+    physical-naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  liquibase:
+    enabled: true
+    change-log: classpath:db/db.changelog-master.xml
+
+
+spring:
+  profiles:
+    active: prod
+  info:
+    build:
+      encoding: UTF-8
+  application:
+    name: employee
+  jpa:
+    show-sql: true
+  liquibase:
+    enabled: false
+
+
+

@@ -1,0 +1,23 @@
+employee-db:
+  datasource:
+    database: employee
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    physical-naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    ddl-auto: none
+  liquibase:
+    enabled: true
+    change-log: classpath:testdb/db.changelog-master.xml
+
+spring:
+  application:
+    name: db-unit
+  profiles:
+    active: test
+  jpa:
+    show-sql: true
+  liquibase:
+    enabled: true
+
